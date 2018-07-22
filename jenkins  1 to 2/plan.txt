@@ -1,0 +1,13 @@
+Things to include in migrtion :
+Plugin configured inside job (My be some if ny version specific)
+SCriptletr scripts
+Updte job DSL if ny chnge in config
+There re some eixting jobs in 2, keep them 
+
+
+Things to consider while choosing migrtion method
+
+If plugin versions re different in  1 nd 2 nd jobs config explictiy clls tht how tht can be updted. 
+1. Upgrde the xisting instnce to new (Crete  copy of the Jenkins instnce with ll jobs nd uprde tht instnce)
+2. Job Importer plugin 
+3. migrte the jobs config 
