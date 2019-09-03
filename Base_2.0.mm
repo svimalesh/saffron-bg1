@@ -8,6 +8,7 @@
 <node CREATED="1527954541846" ID="ID_647329375" MODIFIED="1527954994583" TEXT="Create symlink of rundeck job log under /fdc/log/rundeck/buildlink with name as associated jenkins job">
 <icon BUILTIN="yes"/>
 <icon BUILTIN="help"/>
+<!-- test >
 </node>
 </node>
 </node>
