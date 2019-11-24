@@ -1,0 +1,113 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<scriptApproval plugin="script-security@1.61">
+  <approvedScriptHashes>
+    <string>1019224d222c53e0319cac63562bea810372a48f</string>
+    <string>2494e1817d885368547316a57d5e08cd894dbc52</string>
+    <string>55ca6825b9a6897ecb08cc42c7d6266de799d79e</string>
+    <string>d6a299ab0576a47797c0c7553053449e3b984b90</string>
+    <string>d7886d917c710134b8357f15b58ba69364274ba0</string>
+    <string>fbde3a5bb66c6adfbc69c17c64b3673e2c11a7be</string>
+  </approvedScriptHashes>
+  <approvedSignatures/>
+  <aclApprovedSignatures/>
+  <approvedClasspathEntries/>
+  <pendingScripts>
+    <pendingScript>
+      <context>
+        <user>vimal</user>
+        <item>test/script-approval</item>
+      </context>
+      <script>import hudson.model.*
+
+// get parameters
+import hudson.model.*
+def parameters = build?.actions.find{ it instanceof ParametersAction }?.parameters
+parameters.each {
+   println &quot;parameter ${it.name}:&quot;
+   println it.dump()
+   println &quot;-&quot; * 80
+} </script>
+      <language>groovy</language>
+    </pendingScript>
+    <pendingScript>
+      <context>
+        <user>vimal</user>
+        <item>test/get-creds</item>
+      </context>
+      <script>import jenkins.*
+import jenkins.model.* 
+import hudson.*
+import hudson.model.*
+def jenkinsCredentials = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.plugins.credentials.Credentials.class,
+        Jenkins.instance,
+        null,
+        null
+);
+for (creds in jenkinsCredentials) {
+    println(jenkinsCredentials.id)
+    }</script>
+      <language>groovy</language>
+    </pendingScript>
+    <pendingScript>
+      <context>
+        <user>vimal</user>
+        <item>test/get-creds</item>
+      </context>
+      <script>import jenkins.*
+import jenkins.model.* 
+import hudson.*
+import hudson.model.*
+def jenkinsCredentials = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.plugins.credentials.Credentials.class,
+        Jenkins.instance,
+        null,
+        null
+);
+for (creds in jenkinsCredentials) {
+    println(jenkinsCredentials.id)
+    }
+
+// get parameters
+import hudson.model.*
+def parameters = build?.actions.find{ it instanceof ParametersAction }?.parameters
+parameters.each {
+   println &quot;parameter ${it.name}:&quot;
+   println it.dump()
+   println &quot;-&quot; * 80
+} </script>
+      <language>groovy</language>
+    </pendingScript>
+    <pendingScript>
+      <context>
+        <user>vimal</user>
+        <item>test/get-creds</item>
+      </context>
+      <script>import jenkins.*
+import jenkins.model.* 
+import hudson.*
+import hudson.model.*
+def jenkinsCredentials = com.cloudbees.plugins.credentials.CredentialsProvider.lookupCredentials(
+        com.cloudbees.plugins.credentials.Credentials.class,
+      // Jenkins.instance,
+        null,
+        null
+);
+for (creds in jenkinsCredentials) {
+    println(jenkinsCredentials.id)
+    }
+
+// get parameters
+import hudson.model.*
+def parameters = build?.actions.find{ it instanceof ParametersAction }?.parameters
+parameters.each {
+   println &quot;parameter ${it.name}:&quot;
+   println it.dump()
+   println &quot;-&quot; * 80
+} </script>
+      <language>groovy</language>
+    </pendingScript>
+  </pendingScripts>
+  <pendingSignatures/>
+  <pendingClasspathEntries/>
+</scriptApproval>
