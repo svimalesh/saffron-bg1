@@ -1,29 +1,30 @@
 pipeline {
-  agent any
-  environment {
-    doSonar = 'false'
-  }
-  options {
-    timestamps()
-  }
-  stages {
-    stage ('Test retry'){
-	  environment {
-	    def retryAttempt = 0
-		def waittime= 10 // in seconds
-	  }
-	  steps {
-		retry(5) {
-		  script {
-    	    if (retryAttempt.toInteger() > 0) {
-  			  echo "Retry attempt : " + retryAttempt
-			  sleep (waittime.toInteger() * retryAttempt.toInteger())
-			}
-			retryAttempt = retryAttempt.toInteger() + 1
-			bat 'exit 1'
-		  }
-		}
-	  }
+    agent any
+    environment {
+        doSonar = 'false'
     }
-  }
+	options {
+        timestamps()
+    }
+	stages {
+		stage ('Test retry'){
+		    environment {
+				def retryAttempt = 0
+				def waittime= 10 // in seconds
+			}
+			steps {
+			    retry(5) {
+					script {
+    					if (retryAttempt.toInteger() > 0) {
+						echo "Retry attempt : " + retryAttempt
+						sleep (waittime.toInteger() * retryAttempt.toInteger())
+						//sleep (10 * retryAttempt)
+						}
+						retryAttempt = retryAttempt.toInteger() + 1
+						bat 'exit 1'
+					}
+				}
+			}
+		}
+	}
 }
